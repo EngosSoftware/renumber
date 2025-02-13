@@ -1,6 +1,13 @@
 [package]
 name = "renumber"
 version = "0.0.1"
+authors = ["Dariusz Depta <depta@engos.de>"]
+description = "Renumber tests or benches"
+documentation = "https://docs.rs/renumber"
+repository = "https://github.com/EngosSoftware/renumber.git"
+keywords = ["renumber", "tests", "benches"]
+categories = ["command-line-utilities"]
+license = "MIT OR Apache-2.0"
 edition = "2021"
 
 [dependencies]
