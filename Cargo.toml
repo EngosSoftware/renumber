@@ -1,6 +1,6 @@
 [package]
 name = "renumber"
-version = "0.0.1"
+version = "0.1.0"
 authors = ["Dariusz Depta <depta@engos.de>"]
 description = "Renumber tests or benches"
 documentation = "https://docs.rs/renumber"
@@ -10,5 +10,10 @@ categories = ["command-line-utilities"]
 license = "MIT OR Apache-2.0"
 edition = "2021"
 
-[dependencies]
-regex = "1.11.1"
+[lib]
+name = "renumber"
+path = "src/lib.rs"
+
+[[bin]]
+name = "renumber"
+path = "src/main.rs"
