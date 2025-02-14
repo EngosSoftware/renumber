@@ -1,0 +1,20 @@
+name: macOS M1
+
+on:
+  push:
+    branches:
+      - main
+      - releases/**
+
+env:
+  CARGO_TERM_COLOR: always
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: dtolnay/rust-toolchain@stable
+      - run: rustup target add --toolchain stable aarch64-apple-darwin
+      - run: cargo build --target=aarch64-apple-darwin
+      - run: cargo test --target=aarch64-apple-darwin
