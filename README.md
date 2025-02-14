@@ -62,7 +62,7 @@ fn _first_name_should_be_shorter_than_the_second() {
 }
 ```
 
-> Note that test names begin with underscore, otherwise **renumber** will skip such test.
+**NOTE**: Test names begin with underscore, otherwise **renumber** will skip it.
 
 ### Renumbering
 
@@ -91,7 +91,7 @@ fn _0003() {
 }
 ```
 
-## Hints & tips
+## Hints & Tips
 
 - **renumber** takes a single command-line argument, the input file to be renumbered.
 - If renumbering is successful, the input file is **OVERWRITTEN** with the new, renumbered content.
