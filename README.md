@@ -27,11 +27,11 @@
 
 ## Overview
 
-**Renumber** is a simple command-line utility that renumbers Rust tests and benchmarks.
+**renumber** is a simple command-line utility that renumbers Rust tests and benchmarks.
 
 It is particularly useful when a single test or benchmark file contains multiple functions
 that don't require meaningful names, such as in test-driven development (TDD).
-**Renumber** renames these functions sequentially as `_0001`, `_0002`, `_0003`, and so on.
+**renumber** renames these functions sequentially as `_0001`, `_0002`, `_0003`, and so on.
 
 ## Example
 
@@ -45,22 +45,24 @@ Output:
 
 ```rust
 #[test]
-fn one_should_be_equal_to_one() {
+fn _one_should_be_equal_to_one() {
   assert_eq!(1, 1);
 }
 
 #[test]
-fn one_should_not_be_equal_to_two() {
+fn _one_should_not_be_equal_to_two() {
   assert_ne!(1, 2);
 }
 
 #[test]
-fn first_name_should_be_shorter_than_the_second() {
+fn _first_name_should_be_shorter_than_the_second() {
   let first_name = "John";
   let second_name = "Alexander";
   assert!(first_name.cmp(&second_name).is_gt());
 }
 ```
+
+> Note that some test names begin with underscore, otherwise **renumber** will skip such test
 
 Renumbering:
 
