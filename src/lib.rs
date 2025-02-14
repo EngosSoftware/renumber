@@ -45,7 +45,7 @@ pub fn tokenize(input: String) -> Vec<String> {
   tokens
 }
 
-/// Renumbers tests or benches in specified input string.
+/// Renumbers tests or benchmarks in specified input string.
 pub fn renumber(input: String, mut index: usize) -> String {
   /// Renumbering states.
   #[derive(Clone, Copy, PartialEq, Eq)]
