@@ -61,7 +61,12 @@ fn first_name_should_be_shorter_than_the_second() {
   assert!(first_name.cmp(&second_name).is_gt());
 }
 ```
- 
+
+Renumbering:
+
+```shell
+$ renumber ./tests/test_doc.rs
+```
 
 ## License
 
