@@ -35,7 +35,7 @@ that don't require meaningful names, such as in test-driven development (TDD).
 
 ## Example
 
-Example test file before renumbering:
+Input file:
 
 ```shell
 $ cat ./tests/test_doc.rs
@@ -62,13 +62,42 @@ fn _first_name_should_be_shorter_than_the_second() {
 }
 ```
 
-> Note that some test names begin with underscore, otherwise **renumber** will skip such test
+> Note that some test names begin with underscore, otherwise **renumber** will skip such test.
 
 Renumbering:
 
 ```shell
 $ renumber ./tests/test_doc.rs
 ```
+
+Input file after renumbering:
+
+```rust
+#[test]
+fn _0001() {
+  assert_eq!(1, 1);
+}
+
+#[test]
+fn _0002() {
+  assert_ne!(1, 2);
+}
+
+#[test]
+fn _0003() {
+  let first_name = "John";
+  let second_name = "Alexander";
+  assert!(first_name.cmp(&second_name).is_gt());
+}
+```
+
+## Hints & tips
+
+- **renumber** takes a single command line argument, the input file to be renumbered.
+- When renumbering is successful, the input file is **OVERRIDEN** with the new, renumbered content.
+- Only functions annotated with `#[test]` or `#[bench]` and name beginning with `_` (underscore) are renamed.
+- Numbering starts from 1.
+- The new name has the following pattern: `format!("_{:04}", index)`.
 
 ## License
 
