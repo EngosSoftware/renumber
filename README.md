@@ -100,8 +100,8 @@ fn _0003() {
 - **renumber** takes a single command-line argument, the input file to be renumbered.
 - If renumbering is successful, the input file is **OVERWRITTEN** with the new, renumbered content.
 - Only functions annotated with `#[test]` or `#[bench]` and whose names begin with an underscore (`_`) are renamed.
-- Numbering starts from **1** (vote for [\#1] to change it).
-- The new name follows this pattern: `format!("_{:04}", index)` (vote for [\#2] to change it).
+- Numbering starts from **1** (vote for [\#1] 👍 to change it).
+- The new name follows this pattern: `format!("_{:04}", index)` (vote for [\#2] 👍 to change it).
 
 [\#1]: https://github.com/EngosSoftware/renumber/issues/1
 [\#2]: https://github.com/EngosSoftware/renumber/issues/2
