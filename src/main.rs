@@ -10,12 +10,12 @@ fn main() {
       Ok(input) => {
         let output = renumber(input, 1);
         fs::write(file_name, output).unwrap_or_else(|reason| {
-          eprintln!("Failed to write file '{}' with reason: {}", file_name, reason);
+          eprintln!("Failed to write file '{file_name}' with reason: {reason}");
           exit(1);
         });
       }
       Err(reason) => {
-        eprintln!("Failed to read file '{}' with reason: {}", file_name, reason);
+        eprintln!("Failed to read file '{file_name}' with reason: {reason}");
         exit(1);
       }
     };

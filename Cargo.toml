@@ -1,6 +1,6 @@
 [package]
 name = "renumber"
-version = "0.1.1"
+version = "0.1.2"
 authors = ["Dariusz Depta <depta@engos.de>"]
 description = "Renumber tests or benchmarks"
 documentation = "https://docs.rs/renumber"
@@ -9,6 +9,13 @@ keywords = ["renumber", "tests", "benches"]
 categories = ["command-line-utilities"]
 license = "MIT OR Apache-2.0"
 edition = "2021"
+exclude = [
+    "rustfmt.toml",
+    "Taskfile.yml",
+    ".github/",
+    ".gitignore",
+    "NOTES_AT_FUTURE_ME.md"
+]
 
 [lib]
 name = "renumber"

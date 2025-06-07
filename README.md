@@ -3,12 +3,14 @@
 [![Crates.io][crates-badge]][crates-url]
 ![Code coverage][coverage-badge]
 ![build Linux][build-badge-linux]
+![build Nusl][build-badge-musl]
 ![build Windows][build-badge-windows]
 ![build MacOs][build-badge-macos]
 ![build MacOs arm64][build-badge-macos-arm64]
 [![MIT licensed][mit-badge]][mit-url]
 [![Apache 2.0 licensed][apache-badge]][apache-url]
 [![Contributor Covenant][coc-badge]][coc-url]
+[![Made by Human][mbh-badge]][cc-url]
 
 [crates-badge]: https://img.shields.io/crates/v/renumber.svg
 [crates-url]: https://crates.io/crates/renumber
@@ -16,13 +18,15 @@
 [mit-url]: LICENSE-MIT
 [apache-badge]: https://img.shields.io/badge/License-Apache%202.0-blue.svg
 [apache-url]: LICENSE
-[build-badge-linux]: https://github.com/EngosSoftware/renumber/actions/workflows/build-linux.yml/badge.svg
-[build-badge-windows]: https://github.com/EngosSoftware/renumber/actions/workflows/build-windows.yml/badge.svg
-[build-badge-macos]: https://github.com/EngosSoftware/renumber/actions/workflows/build-macos.yml/badge.svg
-[build-badge-macos-arm64]: https://github.com/EngosSoftware/renumber/actions/workflows/build-macos-m1.yml/badge.svg
-[coverage-badge]: https://img.shields.io/badge/Code%20coverage-100%25-green.svg
+[build-badge-linux]: https://github.com/EngosSoftware/renumber/actions/workflows/linux.yml/badge.svg
+[build-badge-musl]: https://github.com/EngosSoftware/renumber/actions/workflows/musl.yml/badge.svg
+[build-badge-windows]: https://github.com/EngosSoftware/renumber/actions/workflows/windows.yml/badge.svg
+[build-badge-macos]: https://github.com/EngosSoftware/renumber/actions/workflows/macos.yml/badge.svg
+[build-badge-macos-arm64]: https://github.com/EngosSoftware/renumber/actions/workflows/macos-arm64.yml/badge.svg
+[coverage-badge]: https://img.shields.io/badge/Code%20coverage-80%25-green.svg
 [coc-badge]: https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg
 [coc-url]: CODE_OF_CONDUCT.md
+[mbh-badge]: https://img.shields.io/badge/Made_by-HUMAN-d35400.svg
 [repository-url]: https://github.com/EngosSoftware/renumber
 
 ## Overview
@@ -96,8 +100,11 @@ fn _0003() {
 - **renumber** takes a single command-line argument, the input file to be renumbered.
 - If renumbering is successful, the input file is **OVERWRITTEN** with the new, renumbered content.
 - Only functions annotated with `#[test]` or `#[bench]` and whose names begin with an underscore (`_`) are renamed.
-- Numbering starts from **1**.
-- The new name follows this pattern: `format!("_{:04}", index)`.
+- Numbering starts from **1** (vote for [\#1] to change it).
+- The new name follows this pattern: `format!("_{:04}", index)` (vote for [\#2] to change it).
+
+[\#1]: https://github.com/EngosSoftware/renumber/issues/1
+[\#2]: https://github.com/EngosSoftware/renumber/issues/2
 
 ## License
 
@@ -112,3 +119,7 @@ Licensed under either of
 Any contributions to [**renumber**][repository-url] are greatly appreciated.
 All contributions intentionally submitted for inclusion in the work by you,
 shall be dual licensed as above, without any additional terms or conditions.
+
+---
+
+Brought to you with 💙 by [Engos Software](https://engos.de)

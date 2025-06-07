@@ -17,24 +17,25 @@ tasks:
   clippy:
     desc: Runs clippy for all targets
     cmds:
-      - cmd: cargo +stable clippy
-      - cmd: cargo +nightly clippy --all-targets
+      - cmd: cargo +stable clippy --all-targets
 
   cov:
     desc: Generates code coverage report
     cmds:
-      - cmd: cargo llvm-cov --no-cfg-coverage --no-cfg-coverage-nightly --workspace --html
+      - cmd: cargo llvm-cov clean
+      - cmd: cargo llvm-cov --no-cfg-coverage
+      - cmd: cargo llvm-cov report --html
       - cmd: echo -e "\n\e[1;32mOpen coverage report\x3A\e[0m file:///$(pwd)/target/llvm-cov/html/index.html\n"
 
   doc:
     desc: Generates documentation
     cmds:
-      - cmd: cargo doc --no-deps
+      - cmd: cargo +stable doc --no-deps
 
   doc-open:
     desc: Generates documentation and opens in browser
     cmds:
-      - cmd: cargo doc --no-deps --open
+      - cmd: cargo +stable doc --no-deps --open
 
   fmt:
     desc: Runs the code formatter

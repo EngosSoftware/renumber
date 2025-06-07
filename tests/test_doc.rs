@@ -12,5 +12,5 @@ fn _one_should_not_be_equal_to_two() {
 fn _first_name_should_be_shorter_than_the_second() {
   let first_name = "John";
   let second_name = "Alexander";
-  assert!(first_name.cmp(&second_name).is_gt());
+  assert!(first_name.cmp(second_name).is_gt());
 }

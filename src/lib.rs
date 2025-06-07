@@ -61,7 +61,7 @@ pub fn renumber(input: String, mut index: usize) -> String {
   let mut state = State::Start;
   for token in &tokens {
     if state != State::FnName {
-      let _ = write!(&mut output, "{}", token);
+      let _ = write!(&mut output, "{token}");
     }
     match (state, token.as_str()) {
       (State::Start, "#[test]") => state = State::Annotation,
@@ -75,10 +75,10 @@ pub fn renumber(input: String, mut index: usize) -> String {
       (State::AfterFn, _) => state = State::Start,
       (State::FnName, name) => {
         if let Some(suffix) = split_fn_token(name) {
-          let _ = write!(output, "_{:04}({}", index, suffix);
+          let _ = write!(output, "_{index:04}({suffix}");
           index += 1;
         } else {
-          let _ = write!(output, "{}", name);
+          let _ = write!(output, "{name}");
         }
         state = State::Start;
       }
