@@ -9,7 +9,7 @@
 ![build MacOs arm64][build-badge-macos-arm64]
 [![MIT licensed][mit-badge]][mit-url]
 [![Apache 2.0 licensed][apache-badge]][apache-url]
-[![Contributor Covenant][coc-badge]][coc-url]
+[![Contributor Covenant][cc-badge]][cc-url]
 [![Made by Human][mbh-badge]][cc-url]
 
 [crates-badge]: https://img.shields.io/crates/v/renumber.svg
@@ -24,8 +24,8 @@
 [build-badge-macos]: https://github.com/EngosSoftware/renumber/actions/workflows/macos.yml/badge.svg
 [build-badge-macos-arm64]: https://github.com/EngosSoftware/renumber/actions/workflows/macos-arm64.yml/badge.svg
 [coverage-badge]: https://img.shields.io/badge/Code%20coverage-80%25-green.svg
-[coc-badge]: https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg
-[coc-url]: CODE_OF_CONDUCT.md
+[cc-badge]: https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg
+[cc-url]: CODE_OF_CONDUCT.md
 [mbh-badge]: https://img.shields.io/badge/Made_by-HUMAN-d35400.svg
 [repository-url]: https://github.com/EngosSoftware/renumber
 
