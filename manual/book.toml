@@ -1,0 +1,5 @@
+[book]
+title = "renumber"
+authors = ["Dariusz Depta"]
+description = "Renumber Rust tests or benchmarks"
+language = "en"
