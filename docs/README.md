@@ -39,7 +39,7 @@ fn _first_name_should_be_shorter_than_the_second() {
 ```
 
 > [!NOTE]
-> Test names begin with underscore, otherwise **renumber** will skip it.
+> Test names begin with underscore, otherwise **renumber** will skip them.
 
 ### Renumbering
 
