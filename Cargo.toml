@@ -1,20 +1,21 @@
 [package]
 name = "renumber"
-version = "0.1.2"
+version = "0.2.0-dev"
 authors = ["Dariusz Depta <depta@engos.de>"]
-description = "Renumber tests or benchmarks"
+description = "Renumber Rust tests or benchmarks"
 documentation = "https://docs.rs/renumber"
 repository = "https://github.com/EngosSoftware/renumber.git"
-keywords = ["renumber", "tests", "benches"]
+keywords = ["renumber", "tests", "benchmarks"]
 categories = ["command-line-utilities"]
 license = "MIT OR Apache-2.0"
-edition = "2021"
+edition = "2024"
 exclude = [
     "rustfmt.toml",
     "Taskfile.yml",
     ".github/",
     ".gitignore",
-    "NOTES_AT_FUTURE_ME.md"
+    "CODE_OF_CONDUCT.md",
+    "manual/"
 ]
 
 [lib]
