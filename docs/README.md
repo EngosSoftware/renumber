@@ -17,7 +17,7 @@ that don't require meaningful names, such as in test-driven development (TDD).
 cat ./tests/test_doc.rs
 ```
 
-Output:
+Content of the input file _before_ renumbering:
 
 ```rust
 #[test]
@@ -48,6 +48,12 @@ renumber ./tests/test_doc.rs
 ```
 
 ### Input file after renumbering
+
+```shell
+cat ./tests/test_doc.rs
+```
+
+Content of the input file _after_ renumbering:
 
 ```rust
 #[test]
