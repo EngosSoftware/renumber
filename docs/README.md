@@ -11,7 +11,7 @@ that don't require meaningful names, such as in test-driven development (TDD).
 
 ## Example
 
-### Input file
+### Input file before renumbering
 
 ```shell
 cat ./tests/test_doc.rs
