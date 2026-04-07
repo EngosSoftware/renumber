@@ -19,13 +19,35 @@ tasks:
     cmds:
       - cmd: cargo +stable clippy --all-targets
 
-  cov:
-    desc: Generates code coverage report
+  cov-data:
+    desc: Generates code coverage data
     cmds:
-      - cmd: cargo llvm-cov clean
-      - cmd: cargo llvm-cov --no-cfg-coverage
-      - cmd: cargo llvm-cov report --html
-      - cmd: echo -e "\n\e[1;32mOpen coverage report\x3A\e[0m file:///$(pwd)/target/llvm-cov/html/index.html\n"
+      - cmd: cargo +stable llvm-cov clean
+      - cmd: cargo +stable llvm-cov --no-cfg-coverage --no-report
+
+  cov:
+    desc: Generates code coverage report in text format
+    cmds:
+      - task: cov-data
+      - cmd: cargo +stable llvm-cov report
+
+  cov-html:
+    desc: Generates code coverage report in HTML format
+    cmds:
+      - task: cov-data
+      - cmd: cargo +stable llvm-cov --html
+
+  cov-html-open:
+    desc: Generates code coverage report in HTML format
+    cmds:
+      - task: cov-data
+      - cmd: cargo +stable llvm-cov --html --open
+
+  cov-badge:
+    desc: Generates the detailed code coverage badge
+    cmds:
+      - task: cov-data
+      - cmd: cargo +stable llvm-cov --json --summary-only | coverio -l coverage -c --tag cov-badge
 
   doc:
     desc: Generates documentation
@@ -41,6 +63,12 @@ tasks:
     desc: Runs the code formatter
     cmds:
       - cmd: cargo +nightly fmt
+
+  readme:
+    desc: Regenerates README.md file
+    cmds:
+      - cmd: magg readme docs/README.md
+      - task: cov-badge
 
   test:
     desc: Tests in debug mode for all settings

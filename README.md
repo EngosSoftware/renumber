@@ -1,33 +1,41 @@
-# Renumber Rust tests or benchmarks
+### renumber
 
-[![Crates.io][crates-badge]][crates-url]
-![Code coverage][coverage-badge]
+[![crates.io][crates-badge]][crates-url]
+[![coverage][cov-badge]][cov-url]  
 ![build Linux][build-badge-linux]
-![build Nusl][build-badge-musl]
 ![build Windows][build-badge-windows]
-![build MacOs][build-badge-macos]
-![build MacOs arm64][build-badge-macos-arm64]
-[![MIT licensed][mit-badge]][mit-url]
-[![Apache 2.0 licensed][apache-badge]][apache-url]
-[![Contributor Covenant][cc-badge]][cc-url]
-[![Made by Human][mbh-badge]][cc-url]
+![build macOs][build-badge-macos]
+![build macOs arm64][build-badge-macos-arm64]  
+[![mit-license][mit-badge]][mit-license-url]
+[![apache-license][apache-badge]][apache-license-url]
+[![cc][cc-badge]][cc-url]  
+[![mbh][mbh-badge]][mbh-url]
+[![es][es-badge]][es-url]
 
 [crates-badge]: https://img.shields.io/crates/v/renumber.svg
 [crates-url]: https://crates.io/crates/renumber
-[mit-badge]: https://img.shields.io/badge/License-MIT-blue.svg
-[mit-url]: LICENSE-MIT
-[apache-badge]: https://img.shields.io/badge/License-Apache%202.0-blue.svg
-[apache-url]: LICENSE
-[build-badge-linux]: https://github.com/EngosSoftware/renumber/actions/workflows/linux.yml/badge.svg
-[build-badge-musl]: https://github.com/EngosSoftware/renumber/actions/workflows/musl.yml/badge.svg
-[build-badge-windows]: https://github.com/EngosSoftware/renumber/actions/workflows/windows.yml/badge.svg
-[build-badge-macos]: https://github.com/EngosSoftware/renumber/actions/workflows/macos.yml/badge.svg
-[build-badge-macos-arm64]: https://github.com/EngosSoftware/renumber/actions/workflows/macos-arm64.yml/badge.svg
-[coverage-badge]: https://img.shields.io/badge/Code%20coverage-80%25-green.svg
-[cc-badge]: https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg
-[cc-url]: CODE_OF_CONDUCT.md
-[mbh-badge]: https://img.shields.io/badge/Made_by-HUMAN-d35400.svg
+[cov-badge]: https://img.shields.io/badge/coverage-77%25%20%E2%94%82%2066%25%20%E2%94%82%2078%25-f4b01b.svg
+[cov-url]: https://crates.io/crates/coverio
+[build-badge-linux]: https://github.com/EngosSoftware/renumber/actions/workflows/build-linux.yml/badge.svg
+[build-badge-windows]: https://github.com/EngosSoftware/renumber/actions/workflows/build-windows.yml/badge.svg
+[build-badge-macos]: https://github.com/EngosSoftware/renumber/actions/workflows/build-macos.yml/badge.svg
+[build-badge-macos-arm64]: https://github.com/EngosSoftware/renumber/actions/workflows/build-macos-arm64.yml/badge.svg
+[mit-badge]: https://img.shields.io/badge/License-MIT-4169E1.svg
+[mit-url]: https://opensource.org/licenses/MIT
+[mit-license-url]: https://github.com/EngosSoftware/renumber/blob/main/LICENSE-MIT
+[apache-badge]: https://img.shields.io/badge/License-Apache%202.0-4169E1.svg
+[apache-url]: https://www.apache.org/licenses/LICENSE-2.0
+[apache-license-url]: https://github.com/EngosSoftware/renumber/blob/main/LICENSE
+[apache-notice-url]: https://github.com/EngosSoftware/renumber/blob/main/NOTICE
+[cc-badge]: https://img.shields.io/badge/Contributor%20Covenant-2.1-4169E1.svg
+[cc-url]: https://github.com/EngosSoftware/renumber/blob/main/CODE_OF_CONDUCT.md
+[mbh-badge]: https://img.shields.io/badge/Made_by_a-HUMAN-DC143C.svg
+[mbh-url]: https://github.com/DariuszDepta
+[es-badge]: https://img.shields.io/badge/at-Engos_Software-32CD32.svg
+[es-url]: https://engos.de
 [repository-url]: https://github.com/EngosSoftware/renumber
+
+# Renumber Rust tests or benchmarks
 
 ## Overview
 
@@ -35,6 +43,7 @@
 
 It is particularly useful when a single test or benchmark file contains multiple functions
 that don't require meaningful names, such as in test-driven development (TDD).
+
 **renumber** renames these functions sequentially as `_0001`, `_0002`, `_0003`, and so on.
 
 ## Example
@@ -42,7 +51,7 @@ that don't require meaningful names, such as in test-driven development (TDD).
 ### Input file
 
 ```shell
-$ cat ./tests/test_doc.rs
+cat ./tests/test_doc.rs
 ```
 
 Output:
@@ -66,12 +75,13 @@ fn _first_name_should_be_shorter_than_the_second() {
 }
 ```
 
-**NOTE**: Test names begin with underscore, otherwise **renumber** will skip it.
+> [!NOTE]
+> Test names begin with underscore, otherwise **renumber** will skip it.
 
 ### Renumbering
 
 ```shell
-$ renumber ./tests/test_doc.rs
+renumber ./tests/test_doc.rs
 ```
 
 ### Input file after renumbering
@@ -100,26 +110,18 @@ fn _0003() {
 - **renumber** takes a single command-line argument, the input file to be renumbered.
 - If renumbering is successful, the input file is **OVERWRITTEN** with the new, renumbered content.
 - Only functions annotated with `#[test]` or `#[bench]` and whose names begin with an underscore (`_`) are renamed.
-- Numbering starts from **1** (vote for [\#1] 👍 to change it).
-- The new name follows this pattern: `format!("_{:04}", index)` (vote for [\#2] 👍 to change it).
-
-[\#1]: https://github.com/EngosSoftware/renumber/issues/1
-[\#2]: https://github.com/EngosSoftware/renumber/issues/2
 
 ## License
 
 Licensed under either of
 
-- [MIT license](https://opensource.org/licenses/MIT) ([LICENSE-MIT](LICENSE-MIT)), or
-- [Apache License, Version 2.0](https://www.apache.org/licenses/LICENSE-2.0) ([LICENSE](LICENSE))
-  at your option.
+- [MIT license][mit-url] (see [LICENSE-MIT][mit-license-url]) or
+- [Apache License, Version 2.0][apache-url] (see [LICENSE][apache-license-url] and [NOTICE][apache-notice-url])
+
+at your option.
 
 ## Contribution
 
-Any contributions to [**renumber**][repository-url] are greatly appreciated.
+Any contributions to [renumber][repository-url] are greatly appreciated.
 All contributions intentionally submitted for inclusion in the work by you,
 shall be dual licensed as above, without any additional terms or conditions.
-
----
-
-Brought to you with 💙 by [Engos Software](https://engos.de)
