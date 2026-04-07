@@ -1,3 +1,5 @@
+#![doc = include_str!("../docs/README.md")]
+
 use std::fmt::Write;
 
 /// Returns tokenized input string.
