@@ -1,6 +1,6 @@
 [package]
 name = "renumber"
-version = "0.1.3"
+version = "0.2.0-dev"
 authors = ["Dariusz Depta <depta@engos.de>"]
 description = "Renumber Rust tests or benchmarks"
 documentation = "https://docs.rs/renumber"
