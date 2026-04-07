@@ -54,7 +54,7 @@ that don't require meaningful names, such as in test-driven development (TDD).
 cat ./tests/test_doc.rs
 ```
 
-Output:
+Content of the input file _before_ renumbering:
 
 ```rust
 #[test]
@@ -76,7 +76,7 @@ fn _first_name_should_be_shorter_than_the_second() {
 ```
 
 > [!NOTE]
-> Test names begin with underscore, otherwise **renumber** will skip it.
+> Test names begin with underscore, otherwise **renumber** will skip them.
 
 ### Renumbering
 
@@ -85,6 +85,12 @@ renumber ./tests/test_doc.rs
 ```
 
 ### Input file after renumbering
+
+```shell
+cat ./tests/test_doc.rs
+```
+
+Content of the input file _after_ renumbering:
 
 ```rust
 #[test]
